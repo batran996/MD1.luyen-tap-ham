@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
 <body>
-<h2 style="text-align: center;color: red"> <i class="bi bi-emoji-smile"></i>DANH SÁCH SẢN PHẨM TRONG KHO<i class="bi bi-emoji-smile"></i></h2>
+<h2 style="text-align: center;color: red"> <i class="bi bi-emoji-smile"></i> DANH SÁCH SẢN PHẨM TRONG KHO <i class="bi bi-emoji-smile"></i></h2>
 
 <input id="themSP" type="text">
 <button class="btn btn-outline-success" onclick="themSanPham()">Thêm</button>
@@ -99,7 +99,7 @@
             return;
         }
         for (let i = 0; i < danhSachSP.length; i++) {
-            if (timSP.toLowerCase() === danhSachSP[i].toLowerCase()){
+            if (timSP.toLowerCase() === danhSachSP[i].toLowerCase().slice(0,timSP.length)){
                 lisTimKiem.push(timSP)
             }
         }
