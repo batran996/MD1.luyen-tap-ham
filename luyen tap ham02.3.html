@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt("nhập số nguyên bất kì")
+
+    function giaiThua(x) {
+        let gt = 1
+        for (let i = 1; i <= x; i++) {
+            gt = gt * i
+        }
+        return gt
+    }
+
+    giaiThua(input)
+    document.writeln(giaiThua(input))
+</script>
+</body>
+</html>

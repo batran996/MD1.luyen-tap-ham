@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="text-align: center">DANH SÁCH QUẢN LÝ SẢN PHẨM</h2>
+<input id="themSP" type="text">
+<button onclick="themSanPham()">Thêm</button>
+<span id="thongBao"></span>
+<table border="1" style="width: 100%;text-align: center">
+
+    <th>STT</th>
+    <th>NAME</th>
+    <th>CHỈNH SỬA</th>
+    <tbody id="veTbale">
+
+    </tbody>
+</table>
+<script>
+    let danhSachSP = ["mì tôm", "gạo", "muối", "trứng", "cá"]
+
+    function danhSachSanPham() {
+        let table = "";
+        for (let i = 0; i < danhSachSP.length; i++) {
+            //*******************************************************
+            //cách dùng nối chuỗi để vẽ bảng
+            /*table+= "<tr>"+
+                "<td>"+ (i+1) + "</td>"+
+                "<td>"+danhSachSP[i]+ "</td>"+
+                "</tr>"*/
+            //**************************************************************
+            table += `<tr>
+            <td>${i + 1}</td>
+            <td>${danhSachSP[i]}</td>
+            <td><button onclick="chinhSuaSanPham(${i})">chỉnh sửa</button></td>
+            <td><button onclick="chinhSuaSanPham(${i})">xóa </button></td>
+             </tr>`
+        }
+        document.getElementById("veTbale").innerHTML = table;
+    }
+
+    danhSachSanPham();
+
+    function themSanPham() {
+        let sanPhamMoiThem = document.getElementById("themSP").value;
+        if (sanPhamMoiThem.trim() === "") {
+            document.getElementById("thongBao").innerHTML = "<span style=\"color:red\">vui lòng nhập đúng tên sản phẩm</span>"
+        } else {
+            danhSachSP.push(sanPhamMoiThem);
+            document.getElementById("thongBao").innerHTML = "<span style=\"color:deepskyblue\">đã thêm thành công</span>"
+            danhSachSanPham()
+        }
+    }
+
+    function chinhSuaSanPham(id) {
+        let chinhSua = prompt("thay đổi chi tiết san phẩm",danhSachSP[id]);
+        if (chinhSua === ""){
+            document.getElementById("thongBao").innerHTML = "<span style=\"color:red\">vui lòng nhập tên sản phẩm</span>"
+        }else {
+            danhSachSP[id] = chinhSua;
+            document.getElementById("thongBao").innerHTML = "<span style=\"color:deepskyblue\">đã thay đổi thành công</span>"
+            danhSachSanPham();
+        }
+    }
+
+
+</script>
+</body>
+</html>

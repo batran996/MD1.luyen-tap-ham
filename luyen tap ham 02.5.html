@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let number1 = +prompt("nhập số thứ nhất");
+let number2 = +prompt("nhập số thứ hai");
+let number3 = +prompt("nhập số thứ ba");
+let arr = []
+function timMinf() {
+    arr.push(number1,number2,number3)
+    let min = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]<min){
+            min = arr[i]
+        }else {
+            min = min
+        }
+    } document.writeln("số nhỏ nhất là "+ min);
+}timMinf()
+</script>
+</body>
+</html>
